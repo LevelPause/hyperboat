@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/hyperboat?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+  mvc:
+    view:
+      suffix: .html
+    static-path-pattern: /**
+server:
+  port: 8080
+logging:
+  level:
+    root: INFO
+    org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener: off
+  pattern:
+    console: '%d [%thread] [%X{trace_id:--}] %-5level %logger - %msg%n'
+  path: /apache-tomcat/logs
+  config: classpath:logback-prd.xml
+file:
+  upload:
+    url: C:\Users\hyperboat\software\file

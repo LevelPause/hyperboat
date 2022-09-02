@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <packaging>pom</packaging>
+  <modules>
+    <module>hyperboat-api</module>
+    <module>hyperboat-service</module>
+    <module>hyperboat-common</module>
+  </modules>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.1.8.RELEASE</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+  <groupId>com.hyperboat</groupId>
+  <artifactId>hyperboat-parent</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>hyperboat</name>
+  <description>It's a demo for hyperboat</description>
+
+  <properties>
+    <java.version>1.8</java.version>
+    <guava.version>30.0-jre</guava.version>
+    <collections4.version>4.4</collections4.version>
+    <!--    <commons-lang3.version>3.8.1</commons-lang3.version>-->
+    <mysql.version>8.0.30</mysql.version>
+    <jetbrains-annotations.version>20.1.0</jetbrains-annotations.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>${commons-lang3.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-collections4</artifactId>
+      <version>${collections4.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>${guava.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains</groupId>
+      <artifactId>annotations</artifactId>
+      <version>${jetbrains-annotations.version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <excludes>
+            <exclude>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+            </exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
